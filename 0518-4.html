@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>스트링객체</title>
+        <meta charset="utf-8">
+        <script>
+            // 문자객체
+            // var st = new String("hello");
+            // var st2 = "hello";
+            var t = "Hello Thank you good luck to you";
+            document.write(t.charAt(16), "<br>");
+            document.write(t.indexOf("you"), "<br>");
+            document.write(t.indexOf("you", 16), "<br>");
+            document.write(t.lastIndexOf("you"), "<br>");
+            document.write(t.match("luck"), "<br>");
+            document.write(t.search("you"), "<br>");
+            document.write(t.substr(21, 4), "<br>");
+            document.write(t.substring(6, 12), "<br>");
+            // 마지막 자기자신은 포함안한다.
+            document.write(t.replace("you", "me"), "<br>");
+            document.write(t.length, "<br>");
+            var arr = t.split(" ");
+            document.write(arr[0] + "<br>");
+            document.write(arr[3]);
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

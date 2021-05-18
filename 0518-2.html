@@ -76,12 +76,33 @@
             }
             var com = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
             document.write("<img src = 'images/" + com + ".jpg'>")
-            if(meNum == com) {
+            
+            // 단순 컴퓨터값 맞추기 게임
+            // if(meNum == com) {
+            //     document.write("<img src = 'images/win.jpg'>")
+            // } else {
+            //     document.write("<img src = 'images/lose.jpg'>")
+            // } 
+
+            // 진짜 가위바위보게임
+            if(meNum - com == -2 || meNum - com == 1) {
                 document.write("<img src = 'images/win.jpg'>")
-            } else {
+            } else if(meNum - com == -1 || meNum - com == 2) {
                 document.write("<img src = 'images/lose.jpg'>")
-            }          
-            document.write("<h1>내 값은 : </h1>" + "<img src = 'images/" + meNum + ".jpg'>")  
+            } else {
+                document.write("비겼습니다.")
+            }
+
+            // 가위 - 가위 0 비김
+            // 가위 - 바위 -1 짐
+            // 가위 - 보 -2 이김
+            // 바위 - 가위 1 이김
+            // 바위 - 바위 0 비김
+            // 바위 - 보 -1 짐
+            // 보 - 가위 2 짐
+            // 보 - 바위 1 이김
+            // 보 - 보 0 비김
+            document.write("<h2>내 값은 : </h2>" + "<img src = 'images/" + meNum + ".jpg'>")  
         </script>
     </head>
     <body>
