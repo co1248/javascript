@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>내장객체</title>
+        <meta charset="utf-8">
+        <script>
+            // 속성과 기능이 들은 것이 객체
+            // 속성 보여지는 그 자체
+            // 기능 행위를 하면 반응하는 것
+            // 속성중에서도 기능이 있는 속성과 없는 속성이 있다.
+            // 자바스크립트가 미리 많이 쓰는 객체를 지정해 놓았다. 그걸 내장객체라고 한다. 예) 날짜
+            // 변수가 속성을 표현한다.
+            // 함수가 기능을 표현한다. ex) alert, prompt, document.write()
+            // document.write()
+            // document라는 (문서)객체안에 write라는 기능이 있는 것.
+            //var today = new Date(); //객체 변수
+            // new 객체를 생성한다.
+            // document.write();
+            // var nowMonth = today.getMonth(); //달 0~11
+            // var nowDate = today.getDate(); //일
+            // var nowDay = today.getDay(); //요일 0(일요일)~6(토요일)
+            // document.write("월 : " + nowMonth + "<br>");
+            // document.write("일 : " + nowDate + "<br>");
+            // document.write("요일 : " + nowDay + "<br>");
+
+            // var buyDay = new Date(2021,04,1); //21년5월1일
+            // var buyMonth = buyDay.getMonth();
+            // var buyDate = buyDay.getDate();
+            // var buyDay = buyDay.getDay();
+            // document.write("월 : " + buyMonth + "<br>");
+            // document.write("일 : " + buyDate + "<br>");
+            // document.write("요일 : " + buyDay + "<br>");
+
+            // var today = new Date(); //현날짜
+            // 객체는 항상 대문자로 시작한다.
+            // 객체는 항상 뒤에 ()가 붙는다.
+            // var newYear = today.getFullYear();
+            //getFullYear(); 연도만 반환한다.
+            // var theDate = new Date(newYear,11,31);
+            // 날짜를 계산할때는 천분의 1초값으로 바꾼뒤 계산
+            // var diff = theDate.getTime() - today.getTime(); // 1/1000
+            // var result = Math.ceil(diff/(60 * 1000 * 60 * 24));
+            // document.write("연말은 " + result + "일 남았습니다.");
+
+
+            // 수학객체
+            // 생성없이 쓴다. new안써도 된다.(정적구조)
+            // document.write(Math.max(10,20,3,78,12) + "<br>"); //최댓값
+            // document.write(Math.min(10,20,3,78,12) + "<br>"); //최솟값
+            // document.write(Math.round(2.1324) + "<br>"); //반올림
+            // document.write(Math.ceil(2.1324) + "<br>"); //강제올림
+            // document.write(Math.floor(2.1324) + "<br>"); //강제내솟
+            // document.write(Math.PI + "<br>"); //원주율
+            // document.write(Math.random() + "<br>"); //0~1 실수값임의의 숫자 하나를 반환
+            
+            // i = 0;
+            // while(i < 10) {
+            //     var r = Math.floor(Math.random() * (10 - 1 + 1)) + 1; //1부터 10까지 (구하려는 값 - 최솟값 + 1) + 최솟값
+            //     document.write(r + "<br>");
+            //     i++;
+            // }
+
+            document.write("<h1>컴퓨터 가위, 바위, 보 맞추기</h1>");
+            var me = prompt("가위, 바위, 보 중 하나를 입력하세요.","");
+            var meNum;
+            switch(me) {
+                case "가위" : meNum = 1;
+                break;
+                case "바위" : meNum = 2;
+                break;
+                case "보" : meNum = 3;
+                break;
+                default : alert("잘못 입력했습니다.");
+                location.reload();
+                // 브라우져 새로고침
+            }
+            var com = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+            document.write("<img src = 'images/" + com + ".jpg'>")
+            if(meNum == com) {
+                document.write("<img src = 'images/win.jpg'>")
+            } else {
+                document.write("<img src = 'images/lose.jpg'>")
+            }          
+            document.write("<h1>내 값은 : </h1>" + "<img src = 'images/" + meNum + ".jpg'>")  
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
