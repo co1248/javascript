@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset=utf-8/>
+        <title></title>
+        <script>
+            window.onload = function() {
+                // var attr = document.getElementById("b1").getAttribute("src");
+                // getAttribute속성불러오는함수
+                // console.log(attr);
+                document.getElementById("b1").setAttribute("src","images/btn_out.gif");
+                var attr = document.getElementById("b1").getAttribute("src");
+                console.log(attr);
+            }
+        </script>
+    </head>
+    <body>
+        <img src="images/btn_over.gif" id="b1">
+    </body>
+</html>
