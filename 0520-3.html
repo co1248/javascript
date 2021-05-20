@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title> 객체</title>
+        <meta charset="utf-8">
+        <script>
+            // document.getElementById("sel");
+            // 스크립트 안에서 아이디 값이 sel인 것을 가져온다.
+            // 대상객체
+            // var h = document.getElementById("sel");
+            // h가 h1객체
+            // 변수이름.
+            
+            // window.onload = function() {
+            // }
+            // 이걸 써야 적용된다.
+            // 이걸 안쓰고 쓰려면 바디안에 h1 아래에 스크립트를 넣어야 적용된다.
+
+            window.onload = function() {
+                  var h = document.getElementById("sel");
+                  h.style.color = "red";
+                  // 대상객체.속성
+                  h.style.fontSize = "100px";
+            }
+          
+        </script>
+    </head>
+    <body>
+        <h1 id="sel">선택자</h1>
+    </body>
+</html>

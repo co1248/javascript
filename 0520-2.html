@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>윈도우 객체</title>
+        <meta charset="utf-8">
+        <script>
+            // window.open("내용정보","창이름","옵션");
+            // window.open("0518.html","","width = 300, height = 300, top = 20 , left = 40, location = no");
+            // 새창열기
+            // window.document.write();
+            // 모든 객체는 윈도우에서 시작해서 하위에 존재하기 때문에 생략가능
+            // <a href="javascript:window.close()">창닫기</a> 를 새창열려는 html파일의 바디에 넣어놓는다.
+
+            // alert("hello");
+            // confirm("world");
+
+            // var addNum = 0;
+            // var subNum = 1000;
+            // setInterval(함수,시간-1/1000)
+            // var auto1 = setInterval(function() {
+            //     addNum++;
+            //     console.log("addNum" + addNum);
+            // },3000);
+            // var auto2 = setInterval(function() {
+            //     subNum--;
+            //     console.log("subNum" + subNum);
+            // },3000);
+
+            // 디지털 시계
+            // var time = setInterval(function() {
+            //     var today = new Date();
+            //     var t = today.getHours();
+            //     var m = today.getMinutes();
+            //     var s = today.getSeconds();
+            //     document.write(t + " : " + m + " : " + s);
+            // },1000)
+
+            // var addNum = 0;
+            // var auto3 = setTimeout(function() {
+            //     addNum++;
+            //     console.log("addNum" + addNum);
+            // },3000);
+
+            // location.reload();
+            // location.href = "http://daum.net";
+            // document.write();
+
+            var phon = "010-2345-1234";
+            var result1 = phon.substring(phon.length - 4,0);
+            document.write(result1, "****", "<br>");
+
+            var img = "images/bnt_out.jpg"
+            var result2 = img.replace("out","over");
+            document.write(result2, "<br>");
+        </script>
+    </head>
+    <body>
+        <!-- <button onclick="clearInterval(auto1)">증가 정지</button>
+        <button onclick="clearInterval(auto2)">감소 정지</button> -->
+        <!-- <button onclick="clearInterval(auto3)">증가 정지</button> -->
+    </body>
+</html>
