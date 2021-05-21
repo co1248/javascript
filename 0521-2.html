@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset = "UTF-8">
+    <title> 프로토 타입 함수 </title>
+    <style>
+        
+    </style>
+    <script>
+        function Student(name, korean, english) {
+            this.userName = name;
+            this.userKorean = korean;
+            this.userEnglish = english;
+        }
+        
+        Student.prototype.getInfo = function() {
+            document.write("이름 : " + this.userName + "<br>");
+            document.write("국어 : " + this.userKorean + "<br>");
+            document.write("영어 : " + this.userEnglish + "<br>");
+        }
+
+        Student.prototype.getResult = function() {
+            return (this.userKorean + this.userEnglish)/2 + "<br>";
+        }
+        var kim = new Student("김군", 80, 90);
+        kim.getInfo();
+        document.write("평균점수 : " + kim.getResult() + "<br>");
+        
+        var Oh = new Student("오군", 100, 80);
+        Oh.getInfo();
+        document.write("평균점수 : " + Oh.getResult() + "<br>");
+
+       
+    </script>
+</head>
+<body>
+	
+</body>
+</html>
