@@ -4,7 +4,10 @@ function Question(text, choice, answer) {
     this.answer = answer;
 }
 var questions = [
-    new Question('다음 중 최초의 웹 브라우저는 ?', ['모자이크', '인터넷익스플로러', '크롬', '네스케이프'], '네스케이프')
+    new Question('다음 중 최초의 웹 브라우저는 ?', ['모자이크', '인터넷익스플로러', '크롬', '네스케이프'], '네스케이프'),
+    new Question('웹 문서에서 스타일을 작성하는 언어는?', ['HTML', 'jQuery', 'CSS', 'XML'], 'CSS'),
+    new Question('명령어 기반의 인퍼페이스를 의미하는 용어는?', ['GUI', 'CLI', 'HUD', 'SI'], 'CLI'),
+    new Question('CSS 속성 중 글자의 굵기를 변경하는 속성은?', ['font-size', 'font-style', 'font-weight', 'font-variant'], 'font-weight')
 ];
 
 function Quiz(questions) {
@@ -28,11 +31,11 @@ function update_quiz() {
     var choice = document.querySelectorAll('.btn');
     // querySelectorAll 속성이 클래스로 되어있는 모든 요소를 가져올 때 사용한다.
 
-    question.innerHTML = '문제' + idx + ") " + quiz.questions[0].text;
+    question.innerHTML = '문제' + idx + ") " + quiz.questions[quiz.questionIndex].text;
     // 폼테그 사이에 넣을 때는 value를 쓴다.
 
     for(i = 0; i < 4; i++) {
-        choice[i].innerHTML = quiz.questions[0].choice[i];
+        choice[i].innerHTML = quiz.questions[quiz.questionIndex].choice[i];
     }
     progress();
 }
@@ -42,9 +45,8 @@ function progress() {
     progress.innerHTML = '문제 ' + (quiz.questionIndex + 1) + ' / ' + quiz.questions.length;
 }
 
-update_quiz();
-
 var btn = document.querySelectorAll('.btn');
+
 function checkAnswer(i) {
     btn[i].addEventListener('click', function() {
         var answer = btn[i].innerText;
@@ -55,12 +57,13 @@ function checkAnswer(i) {
         } else {
             alert("틀렸습니다.");
         }
-        result();
+        if (quiz.questionIndex < quiz.questions.length - 1) {
+         quiz.questionIndex++;
+         update_quiz();
+        } else {
+        result(); 
+        }
     });
-}
-
-for(i = 0; i < 4; i++) {
-    checkAnswer(i);
 }
 
 function result() {
@@ -75,3 +78,9 @@ function result() {
         quiz_div.innerHTML = txt;
     }
 }
+
+for(i = 0; i < 4; i++) {
+    checkAnswer(i);
+}
+
+update_quiz();
