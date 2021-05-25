@@ -54,7 +54,58 @@ function animate_balloon() {
     }
 }
 
+function bgm_init() {
+    var bgm = new Audio();
+    bgm.src = 'images/bgm.mp3';
+    bgm.loop = true;
+    // bgm.play();
+    document.body.appendChild(bgm);
+    // 요소의 위치를 설정해줘야 한다. append 뒤쪽에 추가
+    // 바디 테크에 마지막으로 자식을 추가
+}
+
 ball_init();
 setInterval(function(){
     animate_balloon();
-},1000/30)
+},1000/30);
+
+bgm_init();
+sound_btn.setAttribute('src','images/sound_on.png');
+sound_btn.onclick = function(event) {
+    var attr = sound_btn.getAttribute('class');
+    // getAttribute 특정속성에 이름을 가진 값을 가져와주세요.
+    var bgm = document.getElementsByTagName('audio');
+    
+    if(attr == 'active') { //음악을 끈다.
+        sound_btn.removeAttribute('class');
+        sound_btn.setAttribute('src','images/sound_on.png');
+        // setAttribute 속성을 바꾼다
+        bgm[0].pause();
+    } else { //음악을 켠다.
+        sound_btn.setAttribute('class','active');
+        sound_btn.setAttribute('src','images/sound_off.png');
+        bgm[0].play();
+    }
+    event.stopPropagation();
+    // 이벤트를 더이상 아래쪽으로 버블링 하지말고 멈춰라
+    // 이거 안써주면 하위 a테그에 이벤트가 적용된다. 그래서 무조건 이벤트끝에 써주기
+}
+
+toggle.onclick = function(event) {
+    var attr = banner.getAttribute('class');
+    if(attr == 'active') { //배너를 닫는다.
+        banner.removeAttribute('class');
+        toggle.innerHTML = "배너 열기";
+        return false;
+        // a태그에 클릭이벤트 쓸때는 반드시 사용한다.
+    } else {
+        banner.setAttribute('class','active');
+        toggle.innerHTML = "배너 닫기";
+        return false;
+    }
+    event.stopPropagation();
+}
+
+banner.onclick = function() {
+    window.open('https://www.naver.com/');
+}

@@ -1,16 +1,16 @@
 
-	// 문제 객체
+	// 문제 객체 생성
 	function Question(text, choice, answer){
 		this.text = text;
         this.choice = choice;
         this.answer = answer;
 	}
 
-	// 퀴즈 정보 객체
+	// 퀴즈 정보 객성 생성
 	function Quiz(questions){
-		 this.score = 0;
-         this.questions = questions;
-         this.questionIndex = 0;
+		 this.score = 0; //점수
+         this.questions = questions; //질문[]
+         this.questionIndex = 0; //질문 순서
 	}
 
 	// 정답 확인 메소드
